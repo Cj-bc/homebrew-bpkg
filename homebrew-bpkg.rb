@@ -15,8 +15,9 @@ class Bpkg < Formula
   test do
 
     system "bpkg", "list"
-
-    for pkg in [ "Cj-bc/bpkg-test", "Cj-bc/bpkg-test.version" ] do
+    testpack =
+[ "Cj-bc/bpkg-test", "Cj-bc/bpkg-test.version" ]
+    for pkg in testpack do
       system "bpkg", "install", "#{pkg}"
       system "package", "getdeps"
       system "bpkg", "package"
