@@ -18,17 +18,22 @@ class Bpkg < Formula
   end
 
   test do
-
     system "bpkg", "list"
+    packagename = "bpkg-test"
     testpack =
-[ "Cj-bc/bpkg-test", "Cj-bc/bpkg-test.version" ]
+      [ "Cj-bc/#{packagename}", "Cj-bc/#{packagename}@0.1.0" ]
     for pkg in testpack do
       system "bpkg", "install", "#{pkg}"
-      system "package", "getdeps"
+      ohai "moving into deps"
+      Dir.chdir("deps/#{packagename}")
+      p Dir.pwd
       system "bpkg", "package"
       system "bpkg", "package", "name"
       system "bpkg", "package", "version"
+      system "cd", "../../"
+
     end
 
+      ohai "All mthods are fine"
   end
 end
