@@ -1,6 +1,6 @@
 class Bpkg < Formula
   homepage "http://www.bpkg.sh"
-  url "https://gihub.com/bpkg/bpkg/archive/0.3.0.tar.gz"
+  url "https://github.com/bpkg/bpkg/archive/0.3.0.tar.gz"
   sha256 "ee86749e0d322fba426e06fabfc53d50172f064240c19cdbdfa4a02475a6a247"
 
   def install
